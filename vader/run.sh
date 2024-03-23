@@ -12,7 +12,8 @@ old_ifs="$IFS"
 IFS=':'
 for plugin in $PLUGINS; do
     path="$tmp/$plugin"
-    git clone --depth 1 "git@github.com:$plugin.git" "$path"
+    echo "Cloning $plugin to $path"
+    gh repo clone "$plugin" "$path"
     echo "set rtp+=$path" >> .vimrc
 done
 IFS="$old_ifs"
