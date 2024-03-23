@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export tmp=$(mktemp -d)
-export PLUGINS="junegunn/vader:$PLUGINS"
+PLUGINS="junegunn/vader.vim:$PLUGINS"
 
 cat <<EOF > .vimrc
 filetype off
