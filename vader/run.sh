@@ -12,7 +12,7 @@ EOF
 old_ifs="$IFS"
 IFS=':'
 for plugin in $PLUGINS; do
-    git clone --depth 1 "https://github.com/$plugin.git" "$tmp/$plugin"
+    git clone --depth 1 "git@github.com:$plugin.git" "$tmp/$plugin"
     echo "set rtp+=$tmp/$plugin" >> .vimrc
 done
 IFS="$old_ifs"
