@@ -24,8 +24,5 @@ filetype plugin indent on
 syntax enable
 EOF
 
-if [ "$EDITOR" = "neovim" ]; then
-    EDITOR=nvim
-fi
-
+echo 'Running vader'
 "$EDITOR" -Es -u .vimrc -c "Vader! $TEST_PATTERN"
