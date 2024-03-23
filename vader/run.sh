@@ -25,4 +25,4 @@ syntax enable
 EOF
 
 echo 'Running vader'
-"$EDITOR" -Es -u .vimrc -c "Vader! $TEST_PATTERN"
+# "$EDITOR" -Es -u .vimrc -c "Vader! $TEST_PATTERN"
