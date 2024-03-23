@@ -1,0 +1,32 @@
+name: 'Test with Vader'
+description: 'Test vim plugin with vader.vim'
+author: tenfy
+
+branding:
+  icon: check-circle
+  color: green
+
+inputs:
+  test-pattern:
+    description: 'A glob which points to your vader test files.'
+    required: false
+    default: '**/*.vader'
+  editor:
+    description: 'The editor to run vader'
+    required: false
+    default: 'vim'
+  plugins:
+    description: 'A colon-separated list of plugins to install.'
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - name: Test with Vader
+      shell: bash
+      run: $GITHUB_ACTION_PATH/run.sh
+      env:
+        TEST_PATTERN: ${{ inputs.test-pattern }}
+        EDITOR: ${{ inputs.editor }}
+        PLUGINS: ${{ inputs.plugins }}
