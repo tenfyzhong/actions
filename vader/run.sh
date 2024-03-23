@@ -6,14 +6,14 @@ export PLUGINS="junegunn/vader:$PLUGINS"
 cat <<EOF > .vimrc
 filetype off
 set rtp+=.
-set rtp+=vader.vim
 EOF
 
 old_ifs="$IFS"
 IFS=':'
 for plugin in $PLUGINS; do
-    git clone --depth 1 "git@github.com:$plugin.git" "$tmp/$plugin"
-    echo "set rtp+=$tmp/$plugin" >> .vimrc
+    path="$tmp/$plugin"
+    git clone --depth 1 "git@github.com:$plugin.git" "$path"
+    echo "set rtp+=$path" >> .vimrc
 done
 IFS="$old_ifs"
 
