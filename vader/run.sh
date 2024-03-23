@@ -2,11 +2,14 @@
 
 export tmp=$(mktemp -d)
 PLUGINS="junegunn/vader.vim:$PLUGINS"
+cwd=$(pwd)
 
 cat <<EOF > .vimrc
 filetype off
-set rtp+=.
+set nocompatible
 EOF
+
+echo "set rtp+=$cwd"
 
 old_ifs="$IFS"
 IFS=':'
@@ -25,4 +28,4 @@ syntax enable
 EOF
 
 echo 'Running vader'
-# "$EDITOR" -Es -u .vimrc -c "Vader! $TEST_PATTERN"
+"$EDITOR" -Es -u .vimrc -c "Vader! $TEST_PATTERN"
