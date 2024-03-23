@@ -9,7 +9,7 @@ filetype off
 set nocompatible
 EOF
 
-echo "set rtp+=$cwd"
+echo "set rtp+=$cwd" >> .vimrc
 
 old_ifs="$IFS"
 IFS=':'
