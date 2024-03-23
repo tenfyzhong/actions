@@ -30,3 +30,4 @@ runs:
         TEST_PATTERN: ${{ inputs.test-pattern }}
         EDITOR: ${{ inputs.editor }}
         PLUGINS: ${{ inputs.plugins }}
+        GH_TOKEN: ${{ github.token }}
